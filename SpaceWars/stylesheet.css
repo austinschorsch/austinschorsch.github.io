@@ -201,7 +201,7 @@ body {
 }
 
 #boss-life-bar {
-    width: 15%;
+    width: 200px;
     height: 3%;
 
     position: absolute;
