@@ -133,7 +133,7 @@ function BossShip(context, image, imageIndex, imageOffset, width, height)
             self.image.src = "images/ships/boss-ship-blink.png";              //destination height (for scaling)
             loop = 1;
 
-            setTimeout(self.blink, 50);
+            setTimeout(self.blink, 80);
         }
         else
         {

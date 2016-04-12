@@ -197,11 +197,11 @@ body {
     color: white;
 
     top: 6%;
-    right: 40%;
+    right: 42%;
 }
 
 #boss-life-bar {
-    width: 190px;
+    width: 200px;
     height: 3%;
 
     position: absolute;
