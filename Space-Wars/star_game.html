@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <title>Space Wars XVIII</title>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" src="css/stylesheet.css">
+        <script type="text/javascript" src="js/game/Widgets/ScreenWidget.js"></script>
+        <script type="text/javascript" src="js/game/Widgets/Star.js"></script>
+        <script type="text/javascript" src="js/game/Ships/SpaceShip.js"></script>
+        <script type="text/javascript" src="js/game/Ships/EnemyShip.js"></script>
+        <script type="text/javascript" src="js/game/Ships/BossShip.js"></script>
+        <script type="text/javascript" src="js/game/StarGame.js"></script>
+        <script type="text/javascript" src="js/game/Bullets/playerBullet.js"></script>
+        <script type="text/javascript" src="js/game/Bullets/enemyBullet.js"></script>
+        <script type="text/javascript" src="js/game/Bullets/bossBullet.js"></script>
+        <script type="text/javascript" src="js/game/Bullets/bossBeam.js"></script>
+</head>
+<body id="body" style="margin: 0; padding: 0; overflow: hidden;">
+    <script id="game-begin">
+        $(document).ready(function(){
+            // Set our game display
+            document.getElementById("canvas").width = window.innerWidth * .75;
+            document.getElementById("canvas").height = window.innerHeight * .9
+            document.getElementById("side-bar").width = window.innerWidth * .22;
+            document.getElementById("side-bar").height = window.innerHeight;
+            
+            var game = new StarGame(document.getElementById("canvas"), 
+                                    "images/ships/ships.png", 
+                                    "images/ships/enemy-ships.png",
+                                    "images/ships/boss-ship.png");
+            game.begin();
+        });
+        
+        
+    </script>
+
+    <!-- Side Bar Div -->
+    <div id="side-bar">
+        <!-- Game Title -->
+        <h1 id="game-title">
+            <span id="space-wars">Space Wars</span>
+            <br><span id="eighteen">XVIII</span>
+        </h1>
+        
+        <!-- Score Board -->
+        <h2 id="score">
+            <span id="score-id" style="color: white;">Score: </span>
+            <span id="player-score" style="color: darkgoldenrod;">000000</span>
+        </h2>
+        
+        <!-- Player Lives -->
+        <div id="lives-box"></div>
+            <h2 id="player-lives">
+                Health
+            </h2>
+            <div id="upper-bar"></div>
+            <div id="lower-bar"></div>
+            <div id="lives-pic"></div>
+        
+        <!-- Special Bullets Indicator -->
+        <h2 id="special-bullets">
+            BOMBS: <span id="bomb-count" style="color: darkgoldenrod; font-family: 'arcade-classic', sans-serif; font-size: 30px;">3</span>
+        </h2>
+        <div id="missiles-pic"></div>
+        
+        <!-- How to bar to show the key codes to play -->
+        <h2 id="how-to">
+            <span id="how-to-text">How to play:</span>
+        </h2>
+        <div id="keys-pic"></div>
+    </div>
+    
+    <!-- Boss Mode Div -->
+    <div id="boss-mode">
+        <div id="boss-life">
+            Boss life:
+        </div>
+        <div id="boss-life-bar"></div>
+    </div>
+    
+    <canvas id="canvas">
+    </canvas>
+    
+     <!-- Some basic overlays -->
+    <div id="game-over-display">Game Over</div>
+    <div id="game-over-score">Score: 0</div>
+    <div id="game-over-lives">Lives: 3</div>
+    <div id="game-over-refresh">Press <span style="color: darkgoldenrod;">&lt;ENTER&gt;</span> to play again</div>
+    
+    <!-- DEBUG MODE -->
+    <div id="debug">X: 0, Y: 0, Width: 0, Height: 0</div>
+</body>
+</html>

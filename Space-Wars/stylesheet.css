@@ -1,0 +1,277 @@
+/* Stylesheet for game
+    - Separates the game and scoreboard/sidepanell
+*/
+
+body {
+    background-image: url(images/widgets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .95;          /*Maybe?*/
+}
+
+/* Add the classic arcade font */
+@font-face {
+    font-family: arcade-classic; 
+    src: url('ARCADECLASSIC.woff') format('woff');
+}
+
+/* Another classic arcade-style font */
+@font-face {
+    font-family: arcade-romans;
+    src: url('ROMANNUMERALS.woff') format('woff');
+}
+
+/* Canvas properties (aka game display) */
+#canvas {
+    margin-top: 30px;
+    margin-left: 20px;
+    
+    border: 4px groove darkred;
+}
+
+#side-bar {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    
+    background-color: black;
+    opacity: .9;
+    
+    width: 23%;
+    height: 94.7%;
+}
+
+/* GAME TITLE */
+#game-title {
+    font-family: 'arcade-classic', sans-serif;
+    position: absolute;
+    
+    color: white;
+    text-align: center;
+    font-size: 45px;
+    border-bottom: 2px solid lightblue;
+
+    margin-right: 20px;
+}
+
+    #space-wars {
+        text-shadow: 5px 5px 0px #2E2E2E;
+        margin-left: 22px;
+        font-size: 49px;
+    }
+
+    #eighteen {
+        color: darkred;
+        text-shadow: 3px 3px 0px #212121;
+        font-family: 'arcade-romans', sans-serif;
+        margin-left: 30px;
+        font-size: 37px;
+    }
+
+/* PLAYER SCORE */
+#score {
+    /* Stamp to screen */
+    position: absolute;
+    top: 18%;
+    
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px #212121;
+
+    margin-left: 40px;
+    font-family: 'arcade-classic', sans-serif;
+}
+
+/* PLAYER LIVES */
+#lives-box {
+    position: absolute;
+    top: 38%;
+    height: 24%;
+    width: 100%;
+    
+    border-top: 3px double darkgoldenrod;
+    border-bottom: 3px double darkgoldenrod;
+    
+    z-index: -5;
+    background-color: #212121;
+    
+}
+
+#player-lives {
+    position: absolute;
+    top: 40%;
+    z-index: 10;
+    margin-left: 30%;
+    color: white;
+    text-shadow: 5px 5px 0px black;
+    
+    font-family: 'arcade-romans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 25px;
+}
+
+    #upper-bar {
+        position: absolute;
+        top: 36%;
+        width: 100%;
+        border-top: 2px groove darkred;
+    }
+
+    #lower-bar {
+        position: absolute;
+        top: 64.4%;
+        width: 100%;
+        border-bottom: 2px groove darkred;
+    }
+
+#lives-pic {
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    background-image: url(images/widgets/boss-health.png);
+    background-repeat: no-repeat;
+    margin-left: 18%;
+    border-radius: 3px;
+    border: 4px solid black;
+    
+    width: 65%;
+    height: 3%;
+}
+
+/* ARROW KEYS INSTRUCTIONS */
+#how-to {
+    position: absolute;
+    bottom: 25%;
+    width: 94%;
+    margin-right: 20px;
+    border-bottom: 2px solid lightblue;
+}
+
+#how-to-text {
+    font-family: 'arcade-classic', sans-serif;
+    color: white;
+    position: absolute;
+    
+    margin-left: 90px;
+    bottom: 4px;
+}
+
+#keys-pic {
+    background-image: url(images/widgets/new-instructions.png);
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    margin-left: 10px;
+    bottom: 0px;
+    height: 26.5%;
+    width: 100%;
+}
+
+/* MISSILES INDICATOR PIC */
+#special-bullets {
+    position: absolute;
+    top: 23%;
+    right: 42.1%;
+    
+    font-family: 'arcade-classic', sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 3px 3px 0px #212121;
+    opacity: 1;
+    
+    display: block;
+    z-index: 20;
+}
+
+/* BOSS LIFE BAR */
+#boss-life {
+    position: absolute;
+    
+    font-family: 'arcade-classic', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 4px 4px 0px #2E2E2E;
+    font-size: 30px;
+    color: white;
+    
+    top: 6%;
+    right: 40%;
+}
+
+#boss-life-bar {
+    width: 15%;
+    height: 3%;
+    
+    position: absolute;
+    background-image: url(images/widgets/boss-health.png);
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    border: 4px solid #212121;
+    box-shadow: inset 3px 3px 0px green;
+    top: 6.5%;
+    right: 24%;
+}
+
+/* Beginning game overlays */ 
+#game-over-display {
+    position: absolute;
+    font-family: 'arcade-romans', sans-serif;
+    font-size: 80px;
+    color: darkgoldenrod;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 0px #292929;
+    
+    display: none;
+    
+    /* Place in middle */
+    top: 40%;
+    left: 20%;
+    
+    background-color: black;
+}
+
+/* Beginning game overlays */ 
+#game-over-score, #game-over-lives, #game-over-refresh {
+    position: absolute;
+    font-family: 'arcade-classic', sans-serif;
+    font-size: 35px;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 0px #292929;
+    
+    display: none;
+    
+    /* Place in middle */
+    top: 53%;
+    left: 33%;
+    
+    background-color: transparent;
+}
+
+#game-over-lives {
+    font-size: 35px;
+    
+    top: 58%;
+    left: 35.5%;
+}
+
+#game-over-refresh {
+    top: 66%;
+    font-size: 28px;
+    
+    left: 26%;
+}
+
+#debug {
+    display: none;
+    
+    position: absolute;
+    color: black;
+    font-family: 'arcade-classic', sans-serif;
+    font-size: 30px;
+    background-color: yellow;
+    
+    top: 0;
+}
