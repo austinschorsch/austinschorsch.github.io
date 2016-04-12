@@ -6,7 +6,7 @@ function BossShip(context, image, imageIndex, imageOffset, width, height)
     ScreenWidget.call(this, context);
     var self = this;
     var xSpeed = 3.5;
-    var ySpeed = .1;
+    var ySpeed = .4;
     var loop = 0;
     var bulletSpeed = "normal";
     var dir = "right";
